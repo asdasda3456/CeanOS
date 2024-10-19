@@ -223,6 +223,9 @@ void keyboardHandler(struct InterruptRegisters *regs){
         case 38:
           delp(press, "l");
           break;
+        case 44:
+          delp(press, "z");
+          break;
         case 45:
           delp(press, "x");
           break;
