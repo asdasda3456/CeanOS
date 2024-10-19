@@ -161,6 +161,7 @@ void keyboardHandler(struct InterruptRegisters *regs){
         case 14:
             if (press == 0) { 
                 print("\b");
+                rm();
             }
             break;
         case 15:

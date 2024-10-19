@@ -4,6 +4,7 @@
 #include "cpuinfo.h"
 #include "util.h"
 #include "strings.h"
+#include "keyboard.h"
 
 void run_term(const char *tex) {
     if (strcmp("clear", tex) != 0) {
