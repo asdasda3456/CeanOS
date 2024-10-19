@@ -1,5 +1,6 @@
 #pragma once
 
+#include "stdint.h"
 
 #define COLOR8_BLACK 0
 #define COLOR8_BLUE 1
@@ -25,3 +26,4 @@ void print(const char* s);
 void scrollUp();
 void newLine();
 void Reset();
+void set_screen_color(uint8_t color);

@@ -45,7 +45,6 @@ const uint32_t NONE = 0xFFFFFFFF - 30;
 const uint32_t ALTGR = 0xFFFFFFFF - 31;
 const uint32_t NUMLCK = 0xFFFFFFFF - 32;
 
-
 const uint32_t lowercase[128] = {
 UNKNOWN,ESC,'1','2','3','4','5','6','7','8',
 '9','0','-','=','\b','\t','q','w','e','r',
@@ -88,7 +87,7 @@ void rm() {
     while(text[i] != '\0') {
         i++;
     }
-    text[--i] = text[i];
+    text[--i] = '\0'; 
 }
 
 void clear() {
@@ -118,13 +117,53 @@ void parser(uint8_t code) {
     print(buff);
 }
 
-
 void keyboardHandler(struct InterruptRegisters *regs){
     char scanCode = inPortB(0x60) & 0x7F; //What key is pressed
     char press = inPortB(0x60) & 0x80; //Press down, or released
 
     switch(scanCode){
-        case 1:
+        case 2: // 1
+            delp(press, "1");
+            break;
+        case 3: // 2
+            delp(press, "2");
+            break;
+        case 4: // 3
+            delp(press, "3");
+            break;
+        case 5: // 4
+            delp(press, "4");
+            break;
+        case 6: // 5
+            delp(press, "5");
+            break;
+        case 7: // 6
+            delp(press, "6");
+            break;
+        case 8: // 7
+            delp(press, "7");
+            break;
+        case 9: // 8
+            delp(press, "8");
+            break;
+        case 10: // 9
+            delp(press, "9");
+            break;
+        case 11: // 0
+            delp(press, "0");
+            break;
+        case 12:
+            delp(press, "-");
+            break;
+        case 13:
+            delp(press, "=");
+            break;
+        case 14:
+            if (press == 0) { 
+                print("\b");
+            }
+            break;
+        case 15:
         case 29:
         case 16:
           delp(press, "q");
@@ -204,6 +243,33 @@ void keyboardHandler(struct InterruptRegisters *regs){
         case 57:
           delp(press, " "); 
           break;
+        case 39:
+          delp(press, ";");
+          break;
+        case 40:
+          delp(press, "'");
+          break;
+        case 41:
+          delp(press, "`");
+          break;
+        case 43:
+          delp(press, "\\");
+          break;
+        case 51:
+          delp(press, ",");
+          break;
+        case 52:
+          delp(press, ".");
+          break;
+        case 53:
+          delp(press, "/");
+          break;
+        case 74:
+          delp(press, "-");
+          break;
+        case 78:
+          delp(press, "+");
+          break;
         case 56:
         case 59:
         case 60:
@@ -235,13 +301,10 @@ void keyboardHandler(struct InterruptRegisters *regs){
             break;
         default:
             if (press == 0){
-                if(lowercase[scanCode] == '\b') {
-                    rm();
-                }
                 if(lowercase[scanCode] == '\n') {
                     print("\n");
                     splitter(text);
-                    print("\nceanos$ ");
+                    print("\nceanos~$ ");
                     clear();
                 }
                 else {
@@ -253,10 +316,7 @@ void keyboardHandler(struct InterruptRegisters *regs){
                   } 
                 }
             }
-
-            
     }
-    
 }
 
 void initKeyboard(){

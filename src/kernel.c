@@ -8,7 +8,7 @@
 #include "keyboard.h"
 
 void main();
-void set_screen_color(uint8_t color);
+extern void set_screen_color(uint8_t color);
 
 void init_all() {
     initGdt();
@@ -17,17 +17,11 @@ void init_all() {
     initKeyboard();
 }
 
-void set_screen_color(uint8_t color) {
-    uint8_t* video_memory = (uint8_t*)0xB8000;
-    for (int i = 0; i < width * height * 2; i += 2) {
-        video_memory[i + 1] = color; // Set the background color byte
-    }
-}
-
 void main(){
     init_all();
     print("##welcome to ceanos##\n");
-    print("ceanos$ ");
+    print("current os version: v0.0.2-alpha\n");
+    print("ceanos~$ ");
     set_screen_color(0x0F);
     for(;;);
 }

@@ -17,8 +17,10 @@ all:
 	gcc $(CFLAGS) -c src/keyboard.c -o build/keyboard.o
 	gcc $(CFLAGS) -c src/cpuinfo.c -o build/cpuinfo.o
 	gcc $(CFLAGS) -c src/osfunc.c -o build/osfunc.o
+	gcc $(CFLAGS) -c src/shell.c -o build/shell.o
+	gcc $(CFLAGS) -c src/strings.c -o build/strings.o
 	### else #####
-	ld -m elf_i386 -T linker.ld -o kernel build/boot.o build/kernel.o build/vga.o build/gdts.o build/gdt.o build/idts.o build/idt.o  build/util.o build/timer.o build/stdio.o build/keyboard.o build/cpuinfo.o build/osfunc.o
+	ld -m elf_i386 -T linker.ld -o kernel build/boot.o build/kernel.o build/vga.o build/gdts.o build/gdt.o build/idts.o build/idt.o build/util.o build/timer.o build/stdio.o build/keyboard.o build/cpuinfo.o build/strings.o build/osfunc.o build/shell.o
 	mv kernel ceanos/boot/kernel
 	grub-mkrescue -o build/ceanos.iso ceanos/
 	qemu-system-i386 build/ceanos.iso

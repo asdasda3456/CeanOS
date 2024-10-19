@@ -1,6 +1,8 @@
 #include "../stdint.h"
 #include "stdio.h"
 #include "../vga.h"
+#include "../strings.h"
+#include "../util.h"
 
 void putc(char c){
     print(&c);
@@ -185,3 +187,5 @@ int * printf_number(int* argp, int length, bool sign, int radix){
 
     return argp;
 }
+
+

@@ -10,7 +10,6 @@ uint16_t currentColor = defaultColor;
 void Reset(){
     line = 0;
     column = 0;
-    currentColor = defaultColor;
 
     for (uint16_t y = 0; y < height; y++){
         for (uint16_t x = 0; x < width; x++){
@@ -83,3 +82,11 @@ void print(const char* s){
         s++;
     }
 }
+
+void set_screen_color(uint8_t color) {
+    uint8_t* video_memory = (uint8_t*)0xB8000;
+    for (int i = 0; i < width * height * 2; i += 2) {
+        video_memory[i + 1] = color; 
+    }
+}
+
