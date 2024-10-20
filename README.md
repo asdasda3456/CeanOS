@@ -2,6 +2,8 @@
 ![GitHub License](https://img.shields.io/github/license/asdasda3456/CeanOS)
 ![Contributors](https://img.shields.io/github/contributors/asdasda3456/CeanOS)
 ![Commits](https://img.shields.io/github/commit-activity/m/asdasda3456/CeanOS)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/asdasda3456/CeanOS)
+
 
 nothing to see here
 
