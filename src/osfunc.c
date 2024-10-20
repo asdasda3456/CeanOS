@@ -10,6 +10,8 @@ extern char text[100];
 void _term_help(){
     print("Available commands:\n");
     print("  clear     - clears the screen\n");
+    print("  help      - prints this message\n");
+    print("  version   - displays os version\n");
     print("  exit      - exits the operating system\n");
     print("  shutdown  - shuts down the system.\n");
     print("  compdate  - displays the compilation date.\n");
@@ -17,12 +19,12 @@ void _term_help(){
 }
 
 void _get_sysinfo() {
-    print("\nOS: CeanOS\n");
-    print("Kernel version: 0xFDF4E3 \n");
-    print("shell: bosh (bobo shell)\n");
-    print("bosh version: v0.1 \n");
-    print("build date: 20 october 2024\n\n");
-    
+    print("\n    ____ \tOS: CeanOS\n");
+    print("   /   __|\tKernel version: 0xFDF4E3 \n");
+    print("  |   |   \tshell: bosh (bobo shell)\n");
+    print("  |   |os \tbosh version: v0.1 \n");
+    print("  \\    \\_\tbuild date: 20 october 2024\n\n");
+    print("   \\_____|\t");
     print_cpuinfo();
 }
 

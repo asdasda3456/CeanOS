@@ -13,10 +13,17 @@ void run_term(const char *tex) {
     else if (strcmp("help", tex) != 0) {
         _term_help();
     }
+    else if (strcmp("version", tex) != 0 || strcmp("ver", tex) != 0) {
+        print("CeanOS version: 0.0.3-alpha\n");
+    }
     else if (strcmp("neofetch", tex) != 0) {
         _get_sysinfo();
     }
     else if (strcmp("exit", tex) != 0) {
+        __asm__("hlt");
+    }
+    else if (strcmp("shutthefuckup", tex) != 0) {
+        print("no.");
         __asm__("hlt");
     }
     else if (strcmp("shutdown", tex) != 0 ) {

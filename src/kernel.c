@@ -19,7 +19,7 @@ void init_all() {
 void main(){
     init_all();
     print("##welcome to ceanos##\n");
-    print("current os version: v0.0.2-alpha\n");
+    print("current os version: v0.0.3-alpha\n");
     print("ceanos~$ ");
     set_screen_color(0x0F);
     for(;;);
