@@ -15,6 +15,10 @@ typedef unsigned long long int uint64_t;
 
 typedef unsigned int size_t;
 
+typedef unsigned long uintptr_t;
+typedef long ptrdiff_t; 
+typedef long long intmax_t;
+
 typedef uint8_t bool;
 #define true 1
 #define false 0

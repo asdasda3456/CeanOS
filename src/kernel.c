@@ -8,7 +8,6 @@
 #include "keyboard.h"
 
 void main();
-extern void set_screen_color(uint8_t color);
 
 void init_all() {
     initGdt();

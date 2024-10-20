@@ -28,11 +28,9 @@ void run_term(const char *tex) {
         );
     }
     else if (strcmp("compdate", tex) != 0 ) {
-        print("Compiled at 19 october 2024\n");
+        print("Compiled at 20 october 2024\n");
     }
-    else if (strcmp("", tex) != 0 ) {
-    }
-    else if (strcmp(" ", tex) != 0 ) {
+    else if (strcmp("", tex) != 0 || strcmp(" ", tex) != 0 ) {
     }
     else {
         print("bosh: unrecognized command \n");

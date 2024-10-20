@@ -1,6 +1,14 @@
+#pragma once
+
+#include "stdint.h"
+
+#ifndef UTIL_h
+#define UTIL_H
+
 void memset(void *dest, char val, uint32_t count);
 void outPortB(uint16_t Port, uint8_t Value);
 char inPortB(uint16_t port);
+void insl(uint16_t port, void* addr, int count); 
 
 struct InterruptRegisters{
     uint32_t cr2;
@@ -9,3 +17,5 @@ struct InterruptRegisters{
     uint32_t int_no, err_code;
     uint32_t eip, csm, eflags, useresp, ss;
 };
+
+#endif //util.h

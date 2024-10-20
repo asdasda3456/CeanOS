@@ -19,3 +19,11 @@ char inPortB(uint16_t port){
     asm volatile("inb %1, %0": "=a"(rv):"dN"(port));
     return rv;
 }
+
+void insl(uint16_t port, void* addr, int count) {
+    asm volatile ("cld; rep insl" 
+                  : "=D" (addr), "=c" (count) 
+                  : "d" (port), "0" (addr), "1" (count) 
+                  : "memory");
+}
+

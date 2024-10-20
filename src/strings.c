@@ -48,6 +48,19 @@ size_t strlen(const char* str) {
     return length; 
 }
 
+void strcpy(char* dest, const char* src) {
+    while (*src) {
+        *dest++ = *src++;
+    }
+    *dest = '\0';  
+}
+
+void strcat(char* dest, const char* src) {
+    while (*dest) dest++;  
+    while (*src) *dest++ = *src++;  
+    *dest = '\0';  
+}
+
 void splitter(const char *tex) {
    run_term(tex); 
 }
