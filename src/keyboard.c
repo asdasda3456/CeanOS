@@ -117,7 +117,7 @@ void parser(uint8_t code) {
     print(buff);
 }
 
-void keyboardHandler(struct InterruptRegisters *regs){
+static void keyboardHandler(struct InterruptRegisters *regs){
     char scanCode = inPortB(0x60) & 0x7F; //What key is pressed
     char press = inPortB(0x60) & 0x80; //Press down, or released
 
@@ -323,7 +323,7 @@ void keyboardHandler(struct InterruptRegisters *regs){
     }
 }
 
-void initKeyboard(){
+void keyboard_init(){
     capsOn = false;
     capsLock = false;
     irq_install_handler(1,&keyboardHandler);

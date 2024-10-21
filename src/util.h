@@ -6,6 +6,7 @@
 #define UTIL_H
 
 void memset(void *dest, char val, uint32_t count);
+void* memcpy(void* dest, const void* src, size_t n); 
 void outPortB(uint16_t Port, uint8_t Value);
 char inPortB(uint16_t port);
 void insl(uint16_t port, void* addr, int count); 

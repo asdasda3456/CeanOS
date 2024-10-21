@@ -19,8 +19,10 @@ all:
 	gcc $(CFLAGS) -c src/osfunc.c -o build/osfunc.o
 	gcc $(CFLAGS) -c src/shell.c -o build/shell.o
 	gcc $(CFLAGS) -c src/strings.c -o build/strings.o
+	gcc $(CFLAGS) -c src/io.c -o build/io.o
+	gcc $(CFLAGS) -c src/malloc.c -o build/malloc.o
 	### else #####
-	ld -m elf_i386 -T linker.ld -o kernel build/boot.o build/kernel.o build/vga.o build/gdts.o build/gdt.o build/idts.o build/idt.o build/util.o build/timer.o build/stdio.o build/keyboard.o build/cpuinfo.o build/strings.o build/osfunc.o build/shell.o
+	ld -m elf_i386 -T linker.ld -o kernel build/boot.o build/kernel.o build/vga.o build/gdts.o build/gdt.o build/idts.o build/idt.o build/util.o build/timer.o build/stdio.o build/keyboard.o build/cpuinfo.o build/strings.o build/osfunc.o build/shell.o build/io.o build/malloc.o
 	mv kernel ceanos/boot/kernel
 	grub-mkrescue -o build/ceanos.iso ceanos/
 	qemu-system-i386 build/ceanos.iso

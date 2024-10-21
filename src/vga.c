@@ -83,6 +83,15 @@ void print(const char* s){
     }
 }
 
+void print_hex(uint8_t value) {
+    char hex_str[3]; 
+    hex_str[0] = "0123456789ABCDEF"[value >> 4]; 
+    hex_str[1] = "0123456789ABCDEF"[value & 0x0F]; 
+    hex_str[2] = '\0'; 
+    print(hex_str); 
+}
+
+
 void set_screen_color(uint8_t color) {
     uint8_t* video_memory = (uint8_t*)0xB8000;
     for (int i = 0; i < width * height * 2; i += 2) {

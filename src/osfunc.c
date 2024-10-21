@@ -28,6 +28,11 @@ void _get_sysinfo() {
     print_cpuinfo();
 }
 
+void halt() {
+    __asm__ volatile ("cli");
+    __asm__ volatile ("hlt");
+}
+
 void itoa(int value, char* str, int base) {
     char* ptr = str;
     char* ptr1 = str;

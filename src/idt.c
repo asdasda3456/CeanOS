@@ -8,7 +8,7 @@ struct idt_ptr_struct idt_ptr;
 
 extern void idt_flush(uint32_t);
 
-void initIdt(){
+void idt_init(){
     idt_ptr.limit = sizeof(struct idt_entry_struct) * 256 - 1;
     idt_ptr.base = (uint32_t) &idt_entries;
 

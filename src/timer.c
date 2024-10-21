@@ -11,7 +11,7 @@ void onIrq0(struct InterruptRegisters *regs){
     ticks += 1;
 }
 
-void initTimer(){
+void timer_init(){
     ticks = 0;
     irq_install_handler(0,&onIrq0);
 
