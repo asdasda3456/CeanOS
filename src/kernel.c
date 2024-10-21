@@ -20,10 +20,11 @@ void main(void);
 
 static inline void init_all(void) {
     gdt_init();
-    idt_init();
-    init_mem();
-    timer_init();
+        idt_init();
+        init_mem();
+        timer_init();
     keyboard_init();
+
     outb(0x3D4, 0x0A);              //disable text cursor
     outb(0x3D5, 0x20);              //disable text cursor
 }
@@ -37,5 +38,5 @@ void main(void){
 
     set_screen_color(0x0F);                      // 0x0F = white on black
     
-    while(1);
+    while(1);   // infinite loop
 }

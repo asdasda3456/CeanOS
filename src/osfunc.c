@@ -15,16 +15,15 @@ void _term_help(){
     print("  exit      - exits the operating system\n");
     print("  shutdown  - shuts down the system.\n");
     print("  compdate  - displays the compilation date.\n");
-    print("  neofetch  - display system information");
+    print("  fetch     - display system information");
 }
 
 void _get_sysinfo() {
-    print("\n    ____ \tOS: CeanOS\n");
-    print("   /   __|\tKernel version: 0xFDF4E3 \n");
-    print("  |   |   \tshell: bosh (bobo shell)\n");
-    print("  |   |os \tbosh version: v0.1 \n");
-    print("  \\    \\_\tbuild date: 21 october 2024\n\n");
-    print("   \\_____|\t");
+    print("\nOS: CeanOS\n");
+    print("Kernel version: 0xFDF4E3 \n");
+    print("shell: bosh (bobo shell)\n");
+    print("os bosh version: v0.1 \n");
+    print("build date: 21 october 2024\n\n");
     print_cpuinfo();
 }
 

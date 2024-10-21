@@ -19,7 +19,7 @@ void run_term(const char *tex) {
     else if (strcmp("version", tex) != 0 || strcmp("ver", tex) != 0) {
         print("CeanOS version: 0.0.3-alpha\n");
     }
-    else if (strcmp("neofetch", tex) != 0) {
+    else if (strcmp("fetch", tex) != 0) {
         _get_sysinfo();
     }
     else if (strcmp("exit", tex) != 0) {

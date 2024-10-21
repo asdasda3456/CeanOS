@@ -23,7 +23,7 @@ all:
 	gcc $(CFLAGS) -c src/malloc.c -o build/malloc.o
 	gcc $(CFLAGS) -c src/memory.c -o build/memory.o
 	### else #####
-	ld -m elf_i386 -T linker.ld -o kernel build/boot.o build/kernel.o build/vga.o build/gdts.o build/gdt.o build/idts.o build/idt.o build/util.o build/timer.o build/stdio.o build/keyboard.o build/cpuinfo.o build/strings.o build/osfunc.o build/shell.o build/io.o build/malloc.o build/memory.o
+	ld -m elf_i386 -T linker.ld -o kernel build/boot.o build/kernel.o build/vga.o build/gdts.o build/gdt.o build/idts.o build/idt.o build/util.o build/timer.o build/stdio.o build/keyboard.o build/cpuinfo.o build/strings.o build/osfunc.o build/shell.o build/io.o build/malloc.o build/memory.o 
 	mv kernel ceanos/boot/kernel
 	grub-mkrescue -o build/ceanos.iso ceanos/
 	qemu-system-i386 build/ceanos.iso
