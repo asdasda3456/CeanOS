@@ -1,3 +1,6 @@
+/* keyboard */ 
+/* Copyright (c) @asdasda3456 2024 - 2024 */
+
 #include "stdint.h"
 #include "util.h"
 #include "idt.h"

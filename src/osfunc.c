@@ -23,7 +23,7 @@ void _get_sysinfo() {
     print("   /   __|\tKernel version: 0xFDF4E3 \n");
     print("  |   |   \tshell: bosh (bobo shell)\n");
     print("  |   |os \tbosh version: v0.1 \n");
-    print("  \\    \\_\tbuild date: 20 october 2024\n\n");
+    print("  \\    \\_\tbuild date: 21 october 2024\n\n");
     print("   \\_____|\t");
     print_cpuinfo();
 }

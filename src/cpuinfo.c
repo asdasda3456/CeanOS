@@ -26,7 +26,7 @@ void get_cpu_info(CPUinfo* cpu_info) {
     cpu_info->family = (eax >> 8) & 0xF;  
 }    
 
-void print_cpuinfo() {
+inline void print_cpuinfo() {
     CPUinfo cpu_info;
     get_cpu_info(&cpu_info);
     

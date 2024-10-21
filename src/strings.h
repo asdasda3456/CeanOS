@@ -1,3 +1,6 @@
+#ifndef STRING_H
+#define STRING_H
+
 #include "stdint.h"
 
 int strcmp(const char *first, const char *second);
@@ -7,3 +10,4 @@ void strcat(char *dest, const char* src);
 size_t strlen(const char* str);
 void splitter(const char *tex);
 
+#endif // string_h

@@ -1,3 +1,6 @@
+/* SHELL.C */
+/* Copyright (c) @asdasda3456 2024 - 2024 */
+
 #include "vga.h"
 #include "stdint.h"
 #include "osfunc.h"
@@ -35,7 +38,7 @@ void run_term(const char *tex) {
         );
     }
     else if (strcmp("compdate", tex) != 0 ) {
-        print("Compiled at 20 october 2024\n");
+        print("Compiled at 21 october 2024\n");
     }
     else if (strcmp("", tex) != 0 || strcmp(" ", tex) != 0 ) {
     }

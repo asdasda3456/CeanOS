@@ -12,24 +12,29 @@
 #include "stdlib/stdio.h"
 #include "keyboard.h"
 #include "io.h"
-
+#include "memory.h"
 
 void main(void);
 
 // initialize all important stuff, like idt, gdt, etc
 
-static void init_all(void) {
+static inline void init_all(void) {
     gdt_init();
     idt_init();
+    init_mem();
     timer_init();
     keyboard_init();
+    outb(0x3D4, 0x0A);              //disable text cursor
+    outb(0x3D5, 0x20);              //disable text cursor
 }
 
 void main(void){
     init_all();
+
     print("##welcome to ceanos##\n");            // this part will probably be cleared and replaced with something
-    print("current os version: v0.0.3-alpha\n"); // else in the future, for now it will just initialize the shell
-    print("ceanos~$ ");                          
+    print("current os version: v0.0.3-alpha\n"); // else in the future, for now it will just print a message and 
+    print("ceanos~$ ");                          // initialize the shell
+
     set_screen_color(0x0F);                      // 0x0F = white on black
     
     while(1);

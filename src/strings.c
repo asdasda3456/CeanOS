@@ -1,3 +1,6 @@
+/* STRINGS.C */
+/* Copyright (c) @asdasda3456 2024 - 2024 */
+
 #include "vga.h"
 #include "stdint.h"
 #include "cpuinfo.h"

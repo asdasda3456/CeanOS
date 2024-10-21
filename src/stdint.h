@@ -1,4 +1,3 @@
-
 #define NULL ((void*)0)
 
 typedef signed char int8_t;
