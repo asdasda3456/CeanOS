@@ -11,8 +11,11 @@
 #include "util.h"
 #include "stdlib/stdio.h"
 #include "keyboard.h"
+#include "osfunc.h"
 #include "io.h"
 #include "memory.h"
+#include "vga_types.h"
+
 
 void main(void);
 
@@ -25,8 +28,9 @@ static inline void init_all(void) {
         timer_init();
     keyboard_init();
 
-    outb(0x3D4, 0x0A);              //disable text cursor
-    outb(0x3D5, 0x20);              //disable text cursor
+    // this disables the cursor
+    outb(VGA_CRT_IC, 0x0A);              
+    outb(VGA_CRT_DC, 0x20);              
 }
 
 void main(void){
@@ -37,6 +41,6 @@ void main(void){
     print("ceanos~$ ");                          // initialize the shell
 
     set_screen_color(0x0F);                      // 0x0F = white on black
-    
-    while(1);   // infinite loop
+   
+    while(1);   
 }

@@ -23,13 +23,16 @@ void _get_sysinfo() {
     print("Kernel version: 0xFDF4E3 \n");
     print("shell: bosh (bobo shell)\n");
     print("os bosh version: v0.1 \n");
-    print("build date: 21 october 2024\n\n");
+    
+    print("build date: ");
+    print(__DATE__);
+    print("\n");
+
     print_cpuinfo();
 }
 
 void halt() {
-    __asm__ volatile ("cli");
-    __asm__ volatile ("hlt");
+    asm("hlt");
 }
 
 void itoa(int value, char* str, int base) {

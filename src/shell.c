@@ -25,10 +25,6 @@ void run_term(const char *tex) {
     else if (strcmp("exit", tex) != 0) {
         __asm__("hlt");
     }
-    else if (strcmp("shutthefuckup", tex) != 0) {
-        print("no.");
-        __asm__("hlt");
-    }
     else if (strcmp("shutdown", tex) != 0 ) {
         print("shutting down...\n");
         
@@ -38,7 +34,10 @@ void run_term(const char *tex) {
         );
     }
     else if (strcmp("compdate", tex) != 0 ) {
-        print("Compiled at 21 october 2024\n");
+        print(__DATE__);
+        print("\n");
+        print(__TIME__);
+        print("\n");
     }
     else if (strcmp("", tex) != 0 || strcmp(" ", tex) != 0 ) {
     }
